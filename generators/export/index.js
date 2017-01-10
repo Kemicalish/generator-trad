@@ -20,9 +20,11 @@ module.exports = Generator.extend({
   },
 
   install: function () {
-    const execDir = '.';
-    this.spawnCommand('gulp', ['export'], {
-        //cwd: execDir
+    const execDir = path.join(this.sourceRoot(), '..', '..');
+    const settings = this.config.getAll().promptValues;
+    const fullOutputPath = path.join(this.destinationRoot(), settings.outputPath);
+    this.spawnCommand('gulp', ['export', '--docId', settings.docId, '--credsPath', settings.credsPath, '--outputPath', fullOutputPath], {
+        cwd: execDir
     }).on('close', () => {
        
     })

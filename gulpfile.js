@@ -11,8 +11,14 @@ const defaultMasterSheetName = 'master';
 const traceException = gutil.log;
 const mandatorySheets = [defaultLanguagesSheetName, defaultMasterSheetName];
 
-const yorc = require('./.yo-rc.json');
-const prompts = yorc['generator-trad'].promptValues;
+const argv = require('yargs').argv;
+
+//const yorc = require(path.join()'./.yo-rc.json');
+const prompts = {
+	docId: argv.docId,
+	credsPath: argv.credsPath,
+	outputPath: argv.outputPath
+};
 
 let output = {
 	languages:null,
