@@ -1,7 +1,31 @@
 # generator-trad
 Generate Google Spreadsheet dedicated to localization and output them to JSON
 
-## The Spreadsheet
+## Installing / Getting started
+
+If you not already have Yeoman, install it globally
+```shell
+npm install -g yo
+```
+
+then install this generator
+```shell
+npm install --save-dev generator-trad 
+```
+
+If your spreadsheet isn't correctly setup yet, follow: **The Spreadsheet Setup** section before you run the generator
+
+Then run the generator to feed the spreadsheet with all needed localized sheets
+```shell
+yo trad
+```
+
+After your sheets have been localized, export their content in json to your output directory
+```shell
+yo trad:export
+```
+
+## The Spreadsheet Setup
 your spreadsheet should looks like this at first:
 https://docs.google.com/spreadsheets/d/1JJnLw93WnUxSEXgGYfoPoyj3hhoHeEgwulee1SH_T24/edit#gid=0
 
@@ -42,11 +66,3 @@ __Setup Instructions__
 **Note: You can reuse these credentials with any number of google spreadsheets as long as you share the doc with these credentials email adress**
 
 
-npm install generator-trad --save-dev
-yo trad <spreadsheet_id>
-
-OR
-
-yo trad:init <spreadsheet_id>
-yo trad:feed
-yo trad:export
