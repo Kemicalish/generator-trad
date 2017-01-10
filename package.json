@@ -1,0 +1,56 @@
+{
+  "name": "generator-trad",
+  "version": "0.0.1",
+  "description": "Generate Google Spreadsheet dedicated to localization and output them to JSON",
+  "homepage": "https://github.com/Kemicalish/generator-ads",
+  "author": {
+    "name": "Mickael Mouillé",
+    "email": "mickael@potion-of-wit.com",
+    "url": "http://www.potion-of-wit.com/"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "google-spreadsheet": "^2.0.3",
+    "yeoman-generator": "^1.0.0",
+    "yosay": "^1.2.1",
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-istanbul": "^0.12.1",
+    "babel-polyfill": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "coveralls": "^2.11.15",
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "gulp": "^3.9.1",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.2.0",
+    "nyc": "^10.0.0",
+    "yeoman-assert": "^2.2.1",
+    "yeoman-test": "^1.6.0"
+  },
+  "devDependencies": {
+    
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "https://github.com/Kemicalish/generator-trad.git",
+  "scripts": {
+    "test": "node_modules/.bin/nyc --require babel-core/register node_modules/.bin/mocha test/**/*",
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "private": false
+}
