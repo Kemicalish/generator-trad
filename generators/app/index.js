@@ -1,6 +1,5 @@
 'use strict';
 const path = require('path');
-//const process = require('process');
 const Generator = require('yeoman-generator');
 const _ = require('lodash');
 let _g = null;
@@ -36,7 +35,8 @@ module.exports = Generator.extend({
 
   install: function () {
     const execDir = path.join(this.sourceRoot(), '..', '..');
-    const settings = this.config.getAll().promptValues;
+    const settings = this.config.getAll().promptValues || {};
+
     this.spawnCommand('gulp', ['init', '--docId', settings.docId, '--credsPath', settings.credsPath], {
         cwd: execDir
     }).on('close', () => {
