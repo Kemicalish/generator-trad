@@ -3,8 +3,6 @@ const path = require('path');
 //const process = require('process');
 const Generator = require('yeoman-generator');
 const _ = require('lodash');
-const settings = require('../conf.js');
-const mkdirp = require('mkdirp');
 let _g = null;
 
 
@@ -25,13 +23,6 @@ module.exports = Generator.extend({
       message: 'Path to your google spreadsheet credentials.json file',
       default: process.cwd(),
       store: true
-    },
-    {
-      type: 'input',
-      name: 'outputPath',
-      message: 'Relative path to your output directory',
-      default: 'localized',
-      store: true
     }];
 
     return this.prompt(prompts).then(function (props) {
@@ -46,8 +37,7 @@ module.exports = Generator.extend({
   install: function () {
     const execDir = path.join(this.sourceRoot(), '..', '..');
     const settings = this.config.getAll().promptValues;
-    const fullOutputPath = path.join(this.destinationRoot(), settings.outputPath);
-    this.spawnCommand('gulp', ['init', '--docId', settings.docId, '--credsPath', settings.credsPath, '--outputPath', fullOutputPath], {
+    this.spawnCommand('gulp', ['init', '--docId', settings.docId, '--credsPath', settings.credsPath], {
         cwd: execDir
     }).on('close', () => {
        

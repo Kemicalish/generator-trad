@@ -3,8 +3,6 @@ const path = require('path');
 //const process = require('process');
 const Generator = require('yeoman-generator');
 const _ = require('lodash');
-const settings = require('../conf.js');
-const mkdirp = require('mkdirp');
 let _g = null;
 
 
@@ -13,7 +11,19 @@ module.exports = Generator.extend({
         _g = this;
   },
   prompting: function () {
+    const prompts = [
+    {
+      type: 'input',
+      name: 'outputPath',
+      message: 'Relative path to your output directory',
+      default: 'localized',
+      store: true
+    }];
 
+    return this.prompt(prompts).then(function (props) {
+      // To access props later use this.props.someAnswer;
+      this.props = props;
+    }.bind(this));
   },
   writing: function () {
     
@@ -21,7 +31,7 @@ module.exports = Generator.extend({
 
   install: function () {
     const execDir = path.join(this.sourceRoot(), '..', '..');
-    const settings = this.config.getAll().promptValues;
+    const settings = _.merge({}, this.config.getAll().promptValues, this.props);
     const fullOutputPath = path.join(this.destinationRoot(), settings.outputPath);
     this.spawnCommand('gulp', ['export', '--docId', settings.docId, '--credsPath', settings.credsPath, '--outputPath', fullOutputPath], {
         cwd: execDir

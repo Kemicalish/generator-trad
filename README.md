@@ -27,7 +27,7 @@ yo trad:export
 
 ## The Spreadsheet Setup
 your spreadsheet should looks like this at first:
-https://docs.google.com/spreadsheets/d/1JJnLw93WnUxSEXgGYfoPoyj3hhoHeEgwulee1SH_T24/edit#gid=0
+https://docs.google.com/spreadsheets/d/1AdhlrK2aIVla4Zm34xVmy-rW2Fiw532GKrnSM0WWRvY
 
 The doc should contain 2 sheets:
  - languages: the sheet should contain one col with the list of needed locales 
