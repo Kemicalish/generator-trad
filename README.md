@@ -17,6 +17,7 @@ npm install --save-dev generator-trad
 ```
 
 If your spreadsheet isn't correctly setup yet, follow: **The Spreadsheet Setup** section before you run the generator
+If your credentials.json isn't in your project directory, follow: **Authentication** section before you run the generator
 
 Then run the generator to feed the spreadsheet with all needed localized sheets
 ```shell
