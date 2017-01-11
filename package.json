@@ -1,6 +1,6 @@
 {
   "name": "generator-trad",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate Google Spreadsheet dedicated to localization and output them to JSON",
   "homepage": "https://github.com/Kemicalish/generator-ads",
   "author": {

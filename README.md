@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Kemicalish/generator-trad.svg?branch=master)](https://travis-ci.org/Kemicalish/generator-trad)
+[![Coverage Status](https://coveralls.io/repos/github/Kemicalish/generator-trad/badge.svg?branch=master)](https://coveralls.io/github/Kemicalish/generator-trad?branch=master)
+
 # generator-trad
 Generate Google Spreadsheet dedicated to localization and output them to JSON
 
