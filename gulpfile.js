@@ -144,8 +144,7 @@ const getMasterContent = sheet => new Promise((resolve, reject) => {
 			.map(kv => kv[1])
 			.map(text => {
 				const sortedText = _.sortBy(text, ['col']);
-				gutil.log('TEXT CONTENT');
-				gutil.log(text);
+
 				return {
 				id:sortedText[0].value,
 				src:sortedText[1].value
@@ -239,9 +238,6 @@ const createFeedSheets = (master, sheets) => () => new Promise((resolve, reject)
 	}
 
 	const langSheets = _.filter(sheets, s => _.find(output.languages, l => l === s.title));
-	gutil.log(output.languages);
-	gutil.log(_.map(sheets, l => l.title));
-	gutil.log(_.map(langSheets, l => l.title));
 
 	getMasterContent(master)
 		.then(feedSheets(langSheets))
